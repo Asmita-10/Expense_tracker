@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="exp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="deco-img deco-left">
+        <img src="cb3a775bb955ecddf8dc1d207994a93c.jpg" alt="">
+    </div>
+    <div class="deco-img deco-right">
+        <img src="d6f214d2e125693988d6a50bdde196c5.jpg" alt="">
+    </div>
+
+    <div class="main">
+        <header class="header">
+            <p class="header-eyebrow">Personal Finance</p>
+            <h1>Expense Tracker</h1>
+            <p class="header-sub">Track every rupee, plan every day</p>
+        </header>
+
+        <div class="layout">
+            <!-- Left: Profile -->
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <div class="avatar">
+                        <span>AT</span>
+                    </div>
+                    <h2 class="profile-name">Asmita Tiwari</h2>
+                    <p class="profile-handle">@Asmita_10</p>
+                    <div class="profile-divider"></div>
+                    <div class="profile-stat">
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-val" id="sidebar-month-total">₹0.00</span>
+                    </div>
+                    <div class="profile-stat">
+                        <span class="stat-label">Entries</span>
+                        <span class="stat-val" id="sidebar-entries">0</span>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <p class="tip-icon">💡</p>
+                    <p class="tip-text">Small expenses add up. Track daily to stay on budget.</p>
+                </div>
+            </aside>
+
+            <!-- Right: Main content -->
+            <main class="content">
+                <!-- Summary cards -->
+                <div class="summary-row">
+                    <div class="summary-card balance-card">
+                        <p class="card-label">Balance</p>
+                        <p class="card-amount" id="balance">₹0.00</p>
+                        <span class="card-icon">🏦</span>
+                    </div>
+                    <div class="summary-card income-card">
+                        <p class="card-label">Income</p>
+                        <p class="card-amount" id="income">₹0.00</p>
+                        <span class="card-icon">📈</span>
+                    </div>
+                    <div class="summary-card expense-card">
+                        <p class="card-label">Expenses</p>
+                        <p class="card-amount" id="expenses">₹0.00</p>
+                        <span class="card-icon">🧾</span>
+                    </div>
+                </div>
+
+                <!-- Add Expense Form -->
+                <div class="form-card">
+                    <h3 class="section-title">Add Expense</h3>
+                    <form id="expense-form">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="expense-name">Expense Name</label>
+                                <input type="text" id="expense-name" placeholder="e.g. Groceries" required>
+                            </div>
+                            <div class="field">
+                                <label for="expense-amount">Amount (₹)</label>
+                                <input type="number" id="expense-amount" placeholder="0.00" min="0" step="0.01" required>
+                            </div>
+                            <div class="field">
+                                <label for="days">Day</label>
+                                <select id="days">
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday">Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="Month">Month</label>
+                                <select id="Month">
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-add">+ Add Expense</button>
+                    </form>
+                </div>
+
+                <!-- Expense List -->
+                <div class="list-card">
+                    <div class="list-header">
+                        <h3 class="section-title">Expense History</h3>
+                        <span class="list-count" id="list-count">0 items</span>
+                    </div>
+                    <ul id="expense-list">
+                        <li class="empty-state">No expenses yet. Add one above ✨</li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="exp.js"></script>
+</body>
+</html>
